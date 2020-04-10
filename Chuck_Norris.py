@@ -14,6 +14,11 @@ def ascii2binary(input):
         binary+= str(decimal%2) # decimal%2 = remainder
         decimal = decimal //2 # // operator discard the remainder and only take the integer
 
+    ### instead of /, // operation, we can use >> (bit shift operation) which is actually faster then division operation.
+    # ex decimal = decimal //2 ---> decimal = decimal >> 1
+
+
+
     if len(binary) < 7: # when the generated binary code is not 7-bit
         temp = ['0' for i in range(7-len(binary))]
         temp = ''.join(temp)
