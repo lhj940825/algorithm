@@ -19,6 +19,11 @@ def ascii2binary(input):
         temp = ''.join(temp)
         binary = binary + temp
 
+        ### Better way
+        # simply use the zfill() which adds zeros(0) at the beginning of the string until it reaches the specified length
+        # binary.zfill(7)
+        # return binary[::-1]
+
     return binary[::-1] #return the binary in reverse order
 
 
