@@ -17,7 +17,7 @@ def kernel(X1, X2, l=1.0, sigma_f=1.0):
     return sigma_f**2 * np.exp(-0.5 / l**2 * sqdist)
 
 # Finite number of points
-X = np.arange(-5, 5, 0.2).reshape(-1, 1)
+X = np.arange(-5, 5, 1).reshape(-1, 1)
 
 # Mean and covariance of the prior
 mu = np.zeros(X.shape)
@@ -26,9 +26,12 @@ cov = kernel(X, X)
 
 # Draw three samples from the prior
 samples = np.random.multivariate_normal(mu.ravel(), cov, 5)
-print(samples)
-for sample in samples:
+print(samples.shape)
+for i, sample in enumerate(samples):
     plt.plot(X, sample)
-
-
+    
+plt.legend(['sample'+str(i) for i in range(1,6)])
+plt.xlabel('x')
+plt.ylabel('f(x)')
 plt.show()
+print(X.reshape(1,-1))
