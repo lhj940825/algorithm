@@ -9,7 +9,7 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution:
+class Solution: # time out solution
     def isSymmetric(self, root: TreeNode) -> bool:
 
         from collections import deque
@@ -69,5 +69,23 @@ class Solution:
             return True
         else:
             return False
+
+
+
+import sys
+
+class Solution: # correct solution
+    def maxProfit(self, prices: List[int]) -> int:
+        profit = 0
+        for i in range(len(prices)-1):
+            price_gap = prices[i+1] - prices[i]
+            if price_gap > 0:
+
+                profit += price_gap
+
+        return profit
+
+
+
 
 
