@@ -16,7 +16,7 @@ class Solution:
 
     def dfs(self, nums: List[int], start_point, end_point):
 
-        if (start_point > end_point) or (end_point < start_point):
+        if (start_point > end_point):
             return None
         if start_point == end_point:
             return TreeNode(nums[start_point], left=None, right=None)
