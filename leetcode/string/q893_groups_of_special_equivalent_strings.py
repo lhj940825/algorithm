@@ -17,4 +17,17 @@ class Solution:
         #special_equivalent_cnt = 0
         return len(decomposed_A)
 
+################################################################################
+# solution with out sorting
+################################################################################
 
+class Solution(object):
+    def numSpecialEquivGroups(self, A):
+        def count(A):
+            ans = [0] * 52
+            for i, letter in enumerate(A):
+                ans[ord(letter) - ord('a') + 26 * (i%2)] += 1
+            print(ans)
+            return tuple(ans)
+
+        return len({count(word) for word in A})
